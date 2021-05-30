@@ -1,0 +1,8 @@
+certifi==2020.12.5
+click==7.1.2
+fastapi @ file:///home/conda/feedstock_root/build_artifacts/fastapi_1620904875538/work
+h11==0.12.0
+pydantic @ file:///opt/concourse/worker/volumes/live/7d2e56a9-5e84-4bea-4ac4-d554f9bdd6aa/volume/pydantic_1621546908285/work
+starlette @ file:///home/conda/feedstock_root/build_artifacts/starlette-recipe_1612371539619/work
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1611751222202/work
+uvicorn==0.13.4
