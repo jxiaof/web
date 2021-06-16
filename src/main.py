@@ -1,30 +1,22 @@
 import env
+import uvicorn
+from logger import logger
 from concurrent.futures import ThreadPoolExecutor
-from typing import Optional
 
 from fastapi import FastAPI
 
+app = FastAPI()
+from views import index_view
 pool = ThreadPoolExecutor(max_workers=env.thread_num)
 
-from pydantic import BaseModel
+logger.info("web running !")
 
-app = FastAPI()
-
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Optional[bool] = None
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+# try:
+#     # uvicorn.run(app='main:app', host="127.0.0.1", port=8080, reload=True, debug=True)
+#     print("hello world !")
+# except:
+#     pass
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
 
 
-@app.put("/items/{item_id}")
-def update_item(item_id: int, item: Item):
-    return {"item_name": item.name, "item_id": item_id}

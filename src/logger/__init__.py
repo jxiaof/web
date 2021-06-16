@@ -7,7 +7,7 @@ import env
 log_level = logging._nameToLevel.get(env.log_level, logging.INFO)
 
 # %(lineno)d  %(filename)s
-logging.basicConfig(stream=sys.stdout, format='%(asctime)s %(levelname)s %(process)d %(filename)s:%(lineno)d | %(message)s')
+logging.basicConfig(stream=sys.stdout, format='%(asctime)s %(levelname)s  进程[%(process)d]  %(filename)s:%(lineno)d | %(message)s')
 logger = logging.getLogger()
 logger.setLevel(log_level or logging.DEBUG)
 
