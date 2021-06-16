@@ -1,5 +1,6 @@
-/.devcontainer
-/.vscode
-/Dockerfile
-/deploy
+.devcontainer
+.vscode
+Dockerfile
+deploy
 .idea
+sql_app.db
